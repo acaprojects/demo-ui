@@ -1,16 +1,16 @@
-#ACA Angular Starter Kit
+# ACA Angular Starter Kit
 
-##Setup
+## Setup
 
 Install npm dependancies using `npm install`
 
-##Development
+## Development
 
 To run the dev server use the command `gulp serve`
 
 By default you the dev server proxies all requests to the set live system, if you wish to use a mocked out system use `--mock` when calling `gulp serve`
 
-##Compilation
+## Compilation
 
 Compile the application into static files using `gulp build`
 
