@@ -1,0 +1,532 @@
+// @Author: Alex Sorafumo <alex.sorafumo>
+// @Date:   24/09/2016 1:46 PM
+// @Email:  alex@yuion.net
+// @Filename: app.style.scss
+// @Last modified by:   Alex Sorafumo
+// @Last modified time: 30/01/2017 1:39 PM
+
+@import 'ui-vars';
+
+/*=======================*\
+||    Global styles     ||
+\*=======================*/
+
+* {
+    user-select: none;
+}
+
+textarea,
+input {
+    user-select: text;
+}
+
+/*=======================*\
+||    System styles     ||
+\*=======================*/
+
+/* Font Styles */
+
+.small  { font-size: 0.8rem; }
+.normal { font-size: 1.0rem; }
+.big    { font-size: 1.2rem; }
+.large  { font-size: 1.4rem; }
+
+
+/*=======================*\
+||    Utility styles     ||
+\*=======================*/
+
+.disabled{
+    pointer-events: none;
+}
+
+.overflow{
+    overflow: auto;
+}
+
+.fixed {
+    position: fixed;
+}
+
+.fit {
+    max-height: 99%;
+    max-width: 99%;
+}
+
+.fill {
+    width: 100%;
+    height: 100%;
+}
+
+.overlay{
+
+}
+
+.visible {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.5s linear;
+}
+
+.hidden {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s 0.5s, opacity 0.5s linear;
+}
+
+.noselect {
+    user-select: none;
+}
+
+.no-padding {
+    padding: 0;
+}
+
+.align-center{
+    text-align: center;
+}
+
+@media screen and (max-width: 720px) {
+    .mobile-hide {
+        display: none;
+    }
+}
+
+/*=======================*\
+||   Application Styles  ||
+\*=======================*/
+
+* a {
+    text-decoration: none;
+    color: #FFF;
+    &:hover{
+	    color: #FFF;
+	    text-decoration: none;
+	}
+}
+
+.title {
+    font-family: Courier New, Courier, monospace;
+	font-style: italic;
+    font-weight: bold;
+    font-size: 2em;
+    margin: .5em 0;
+}
+
+.composer {
+	/* Composer Primary color */
+	&.style-primary {
+		background-color: $primary-color;
+		color: #FFF;
+		&:hover, &.hover {
+			background-color: #FFF;
+			color: $primary-color;
+		}
+	}
+	&.style-primary-i {
+		background-color: #FFF;
+		color: $primary-color;
+		&:hover, &.hover {
+			color: #FFF;
+		}
+	}
+	/* Button Styles */
+
+	&.btn-primary {
+		background-color: $primary-color;
+		color: #FFF;
+		cursor: pointer;
+		padding: 0.2em 1.0em 0.4em 1.0em !important;
+		&:hover, &.hover { background-color: $primary-color - #111111; }
+	}
+	&.border-primary { border-color: $primary-color !important; }
+	&.bg-primary     { background-color: $primary-color; }
+}
+
+
+/*========================*\
+||    Overwrite styles    ||
+\*========================*/
+
+.material-icons {
+	font-size: 1.0em;
+}
+
+.display-icon {
+    flex-grow: 0 !important;
+    height: 1.0em;
+    width: 1.0em;
+    margin: 0.2em 0;
+    font-size: 1.4em;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    &.info {
+        background-image: url(data:image/svg+xml;base64,PHN2ZyBmaWxsPSIjRkZGRkZGIiBoZWlnaHQ9IjI0IiB2aWV3Qm94PSIwIDAgMjQgMjQiIHdpZHRoPSIyNCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxwYXRoIGQ9Ik0wIDBoMjR2MjRIMHoiIGZpbGw9Im5vbmUiLz4KICAgIDxwYXRoIGQ9Ik0xMSAxN2gydi02aC0ydjZ6bTEtMTVDNi40OCAyIDIgNi40OCAyIDEyczQuNDggMTAgMTAgMTAgMTAtNC40OCAxMC0xMFMxNy41MiAyIDEyIDJ6bTAgMThjLTQuNDEgMC04LTMuNTktOC04czMuNTktOCA4LTggOCAzLjU5IDggOC0zLjU5IDgtOCA4ek0xMSA5aDJWN2gtMnYyeiIvPgo8L3N2Zz4=);
+    }
+    &.error {
+        background-image: url(data:image/svg+xml;base64,PHN2ZyBmaWxsPSIjRkZGRkZGIiBoZWlnaHQ9IjI0IiB2aWV3Qm94PSIwIDAgMjQgMjQiIHdpZHRoPSIyNCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxwYXRoIGQ9Ik0wIDBoMjR2MjRIMHoiIGZpbGw9Im5vbmUiLz4KICAgIDxwYXRoIGQ9Ik0xMiAyQzYuNDggMiAyIDYuNDggMiAxMnM0LjQ4IDEwIDEwIDEwIDEwLTQuNDggMTAtMTBTMTcuNTIgMiAxMiAyem0xIDE1aC0ydi0yaDJ2MnptMC00aC0yVjdoMnY2eiIvPgo8L3N2Zz4=);
+    }
+    &.success {
+        background-image: url(data:image/svg+xml;base64,PHN2ZyBmaWxsPSIjRkZGRkZGIiBoZWlnaHQ9IjI0IiB2aWV3Qm94PSIwIDAgMjQgMjQiIHdpZHRoPSIyNCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxwYXRoIGQ9Ik0wIDBoMjR2MjRIMHoiIGZpbGw9Im5vbmUiLz4KICAgIDxwYXRoIGQ9Ik05IDE2LjJMNC44IDEybC0xLjQgMS40TDkgMTkgMjEgN2wtMS40LTEuNEw5IDE2LjJ6Ii8+Cjwvc3ZnPg==);
+    }
+    &.success-tick {
+        background-image: url(data:image/svg+xml;base64,PHN2ZyBmaWxsPSIjNENBRjUwIiBoZWlnaHQ9IjI0IiB2aWV3Qm94PSIwIDAgMjQgMjQiIHdpZHRoPSIyNCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxwYXRoIGQ9Ik0wIDBoMjR2MjRIMHoiIGZpbGw9Im5vbmUiLz4KICAgIDxwYXRoIGQ9Ik05IDE2LjJMNC44IDEybC0xLjQgMS40TDkgMTkgMjEgN2wtMS40LTEuNEw5IDE2LjJ6Ii8+Cjwvc3ZnPgo=);
+    }
+    &.error-cross {
+        background-image: url(data:image/svg+xml;base64,PHN2ZyBmaWxsPSIjRjQ0MzM2IiBoZWlnaHQ9IjI0IiB2aWV3Qm94PSIwIDAgMjQgMjQiIHdpZHRoPSIyNCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxwYXRoIGQ9Ik0xOSA2LjQxTDE3LjU5IDUgMTIgMTAuNTkgNi40MSA1IDUgNi40MSAxMC41OSAxMiA1IDE3LjU5IDYuNDEgMTkgMTIgMTMuNDEgMTcuNTkgMTkgMTkgMTcuNTkgMTMuNDEgMTJ6Ii8+CiAgICA8cGF0aCBkPSJNMCAwaDI0djI0SDB6IiBmaWxsPSJub25lIi8+Cjwvc3ZnPgo=);
+    }
+    &.close-cross {
+        background-image: url(data:image/svg+xml;base64,PHN2ZyBmaWxsPSIjRkZGRkZGIiBoZWlnaHQ9IjI0IiB2aWV3Qm94PSIwIDAgMjQgMjQiIHdpZHRoPSIyNCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxwYXRoIGQ9Ik0xOSA2LjQxTDE3LjU5IDUgMTIgMTAuNTkgNi40MSA1IDUgNi40MSAxMC41OSAxMiA1IDE3LjU5IDYuNDEgMTkgMTIgMTMuNDEgMTcuNTkgMTkgMTkgMTcuNTkgMTMuNDEgMTJ6Ii8+CiAgICA8cGF0aCBkPSJNMCAwaDI0djI0SDB6IiBmaWxsPSJub25lIi8+Cjwvc3ZnPg==);
+    }
+    &.edit {
+        background-image: url(data:image/svg+xml;base64,PHN2ZyBmaWxsPSIjMDAwMDAwIiBoZWlnaHQ9IjI0IiB2aWV3Qm94PSIwIDAgMjQgMjQiIHdpZHRoPSIyNCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxwYXRoIGQ9Ik0zIDE3LjI1VjIxaDMuNzVMMTcuODEgOS45NGwtMy43NS0zLjc1TDMgMTcuMjV6TTIwLjcxIDcuMDRjLjM5LS4zOS4zOS0xLjAyIDAtMS40MWwtMi4zNC0yLjM0Yy0uMzktLjM5LTEuMDItLjM5LTEuNDEgMGwtMS44MyAxLjgzIDMuNzUgMy43NSAxLjgzLTEuODN6Ii8+CiAgICA8cGF0aCBkPSJNMCAwaDI0djI0SDB6IiBmaWxsPSJub25lIi8+Cjwvc3ZnPg==);
+    }
+}
+
+.orange-hover {
+    & .item {
+        &:hover {
+            background-color: $color1 !important;
+            color: #FFFFFF !important;
+        }
+    }
+}
+ul li.orange-hover {
+    &:hover {
+        background-color: $color1 !important;
+        color: #FFFFFF !important;
+    }
+}
+
+
+.error-notify, .info-notify, .success-notify {
+    color: #FFFFFF;
+    text-align: left;
+	box-shadow: 0 0.1em 0.2em 0.1em rgba(0,0,0,0.2);
+    padding: 0.1em 0.2em;
+	& .close-btn {
+		color: #FFFFFF;
+		&:hover {
+			color: rgba(255,255,255,0.54);
+		}
+	}
+    & .contents {
+        margin-top: -0.4em;
+        & div {
+            flex-grow: 1;
+            flex-shrink: 1;
+            padding-right: 0.2em;
+    		word-wrap: normal;
+            vertical-align: middle;
+            &.display-icon {
+                padding-top: 0.4em;
+                padding-right: 0.7em;
+                flex-grow: 0;
+                flex-shrink: 0;
+                font-size: 2.5em;
+            }
+        }
+
+        & i {
+            font-size: 2.5em;
+        }
+    }
+}
+
+.error-notify {
+    background-color: #E53935;
+}
+
+.info-notify {
+    background-color: #1E88E5;
+}
+
+.success-notify {
+    background-color: #00C853;
+}
+
+.aca.btn .raised button {
+    min-width: 8.0em;
+}
+
+.version {
+    position: fixed;
+    right: 0.3em;
+    bottom: 7.2em;
+    color: #37474F;
+    font-size: 0.7em;
+
+}
+
+.build {
+    position: fixed;
+    right: 5.0em;
+    bottom: 7.2em;
+    color: #37474F;
+    font-size: 0.7em;
+}
+
+div.aca.btn.disabled button.aca {
+	background-color: rgba(0,0,0,0.1) !important;
+}
+
+.no-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.5em;
+    font-weight: bold;
+    margin: .5em;
+    text-align: center;
+    color: rgba(0,0,0,.3);
+
+    .icon {
+        font-size: 6em;
+        height: 1em;
+        width: 1em;
+    }
+
+    img {
+        height: 1em;
+        width: 1em;
+        opacity: .3;
+    }
+
+    .text {
+        font-family: Trump Soft Pro;
+        text-transform: uppercase;
+        font-size: 1.2em;
+        min-height: auto !important;
+        white-space: nowrap !important;
+        padding: .25em .5em;
+    }
+
+    .spinner {
+        padding: .25em;
+    }
+
+    .info {
+        font-size: .5em;
+        font-family: Trump Soft Pro;
+        text-transform: uppercase;
+    }
+}
+
+.tap-area {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+}
+
+.tooltip-text {
+    font-size: 1rem;
+    font-weight: normal;
+    font-style: normal;
+    padding: .5em;
+    white-space: nowrap;
+}
+
+.aca.dropdown.default.sm {
+    min-width: 3em;
+    .list,
+    .container {
+        min-width: 3em;
+    }
+}
+
+input {
+    font-size: 1em;
+    border-radius: .1em;
+    box-shadow: none;
+    outline: none;
+    border: 1px solid rgba(0,0,0,.1);
+    padding: .2em .4em;
+}
+
+textarea {
+    font-family: Helvetica, sans-serif;
+}
+
+.btn-group {
+    margin: .2em .25em;
+    display: flex;
+    button {
+        position: relative;
+        margin: 0;
+        border-radius: 0;
+        border-right-width: 2px;
+        border-left-width: 2px;
+        &:first-child  {
+            border-radius: 1.1em 0 0 1.1em;
+            border-left-width: 3px;
+        }
+        &:last-child  {
+            border-radius: 0 1.1em 1.1em 0;
+            border-right-width: 3px;
+        }
+    }
+}
+
+button {
+    font-size: 1em;
+    padding: .1em 1em 0;
+    border: 3px solid rgba(0,0,0,0.87);
+    background-color: rgba(0,0,0,0.05);
+    border-radius: 1.1em;
+    color: rgba(0,0,0,0.87);
+    margin: .2em .25em;
+    min-width: 6em;
+    outline: none;
+    text-transform: uppercase;
+    cursor: pointer;
+    height: 2.2em;
+    font-family: Pharma;
+    font-weight: bold;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    &.accept,
+    &.confirm {
+        color: #4CAF50;
+        border-color: #4CAF50;
+        &:hover {
+            color: #fff;
+            background-color: #4CAF50;
+        }
+    }
+    &.decline {
+        color: #F44336;
+        border-color: #F44336;
+        &:hover {
+            color: #fff;
+            background-color: #F44336;
+        }
+    }
+    &.primary {
+        color: $color1;
+        border-color: $color1;
+        &:hover {
+            color: #fff;
+            background-color: $color1;
+        }
+    }
+    &.secondary {
+        color: $color2;
+        border-color: $color2;
+        &:hover {
+            color: #fff;
+            background-color: $color2;
+        }
+    }
+    &.invert {
+        color: #fff;
+        background-color: #333;
+        border-color: #fff;
+        &:hover {
+            background-color: #fff;
+            color: #333;
+        }
+    }
+    &:hover {
+        color: #fff;
+        background-color: rgba(0,0,0,0.87);
+        box-shadow: 0 .1em .2em .1em rgba(0,0,0,0.2);
+    }
+    &:active {
+        box-shadow: none;
+    }
+
+    &[disabled] {
+        background-color: rgba(0,0,0,.1);
+        border-color: rgba(0,0,0,.1);
+        color: rgba(0,0,0,.1);
+        cursor: not-allowed;
+        &:hover {
+            background-color: rgba(0,0,0,.1);
+            border-color: rgba(0,0,0,.1);
+            color: rgba(0,0,0,.1);
+            box-shadow: none;
+        }
+    }
+}
+
+.rm-info {
+    font-size: .8em;
+    padding: .5em;
+    .field {
+        display: flex;
+        align-items: center;
+        padding: .25em .5em;
+    }
+
+    .middle {
+        text-align: center;
+    }
+
+    .sm {
+        font-size: .9em;
+    }
+
+    .bold {
+        font-weight: bold;
+    }
+
+    .capitalize {
+        text-transform: capitalize;
+    }
+
+    .value {
+        flex-grow: 1;
+    }
+
+    .label {
+        padding: .5em;
+    }
+
+    .single-line {
+        white-space: nowrap;
+    }
+
+    .red {
+        color: #F44336;
+    }
+
+    .green {
+        color: #4CAF50;
+    }
+
+    .grey {
+        color: rgba(0,0,0,.54);
+    }
+}
+
+@media screen and (min-width: 720px) {
+    .mobile-only {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .app {
+        font-size: 3.0vmin;
+    }
+}
+
+@media screen and (max-width: 720px) {
+    .app {
+        font-size: 4.0vmin;
+    }
+
+    .desktop-only {
+        display: none;
+    }
+
+    .tooltip {
+        display: none;
+    }
+}

@@ -1,0 +1,16 @@
+{
+    "version": "0.4.14",
+    "build": "2017-08-15 12:43:30",
+    "env": "prod",
+    "debug": true,
+    "sys_id": "sys-MyN~1QuTbv",
+    "logo": "http://static1.squarespace.com/static/52142586e4b0c09536a144ad/t/561327b2e4b06f521722e448/1469084115046/?format=1500w",
+    "domain": "localhost:3000",
+    "route": "",
+    "protocol": "http:",
+    "hide": {
+        "pay": true,
+        "register": true,
+        "tiles": []
+    }
+}
