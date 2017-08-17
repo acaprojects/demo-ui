@@ -2,9 +2,10 @@
 
 ## Setup
 
-Install [NodeJS](https://nodejs.org/en/download/current/)
-Install [Gulp](https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md) with `npm install --global gulp-cli`
-Install npm dependancies using `npm install`
+1. Install [NodeJS](https://nodejs.org/en/download/current/)
+1. Run `npm install` in demo-ui folder
+1. Run `npm install --global gulp-cli` to Install [Gulp](https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md) with 
+
 
 ## Development
 
