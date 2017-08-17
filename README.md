@@ -10,7 +10,7 @@ Install npm dependancies using `npm install`
 
 To run the dev server use the command `gulp serve`
 
-By default you the dev server proxies all requests to the set live system, if you wish to use a mocked out system use `--mock` when calling `gulp serve`
+By default the dev web server proxies all requests to the set live system, if you wish to use a mock system use `--mock` when calling `gulp serve`
 
 ## Compilation
 
